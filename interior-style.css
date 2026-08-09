@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0d0d1a;
+}
+
+body {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.exit-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f0d9b5;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 10;
+  opacity: 0;
+  animation: revealHotspot 0.8s ease-out forwards;
+  animation-delay: 3.2s; /* crossfade ke baad aaye, jaisa builder-hotspot */
+}
+
+.exit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+.shop-scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scene-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0d0d1a;
+}
+
+/* Drone view - start visible */
+.drone {
+  background-image: url('assets/shop-drone.png');
+  opacity: 1;
+  animation: fadeOutDrone 1.5s ease-in-out forwards;
+  animation-delay: 1.5s; /* first 1.5s only drone short */
+}
+
+/* POV view - drone ke baad fade in hoga */
+.pov {
+  background-image: url('assets/shop-pov.png');
+  opacity: 0;
+  animation: fadeInPov 1.5s ease-in-out forwards;
+  animation-delay: 1.5s; /* same time pe dono animate honge - crossfade */
+}
+
+@keyframes fadeOutDrone {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fadeInPov {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Coffee Builder Hotspot Button */
+.builder-hotspot {
+  position: absolute;
+  bottom: 12%;
+  right: 8%;
+  background-color: rgba(230, 180, 100, 0.9);
+  color: #1a1410;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0;
+  animation: revealHotspot 0.8s ease-out forwards;
+  animation-delay: 3.2s; /* dono images crossfade khatam hone ke baad aayega */
+  z-index: 5;
+}
+
+@keyframes revealHotspot {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
