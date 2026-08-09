@@ -35,6 +35,11 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.exit-btn:hover {
+  color: #e6b464;
+}
+
+
 body.fade-out {
   opacity: 0;
 }
