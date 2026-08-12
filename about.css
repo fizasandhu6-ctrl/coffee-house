@@ -1,0 +1,312 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #1a1410; */
+  
+}
+
+html, body {
+  height: 100%;
+  font-family:'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* z-index: 10;
+  opacity: 0;
+  animation: fadeSlideDown 0.8s ease-out forwards;
+  animation-delay: 2.3s; */
+}
+
+.logo {
+  color: #f0d9b5;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links  {
+  text-decoration: none;
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-links li {
+  color: #d8c8b8;
+  cursor: pointer;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #d8c8b8;
+  cursor: pointer;
+}
+
+.nav-links li.active {
+  color: #e6b464;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.team-list {
+  padding: 60px;
+}
+
+.team-item {
+  font-size: 48px;
+  font-weight: 700;
+  color: #d8c8b8;
+  padding: 24px 0;
+  border-top: 1px solid rgba(230, 180, 100, 0.2);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.team-item:hover {
+  color: #e6b464;
+}
+
+/* Cursor-follow floating preview */
+.cursor-preview {
+  position: fixed;
+  width: 160px;
+  height: 200px;
+  pointer-events: none; /* mouse iske through "pass" ho jaye, click block na kare */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+  text-align: center;
+}
+
+.cursor-preview.active {
+  opacity: 1;
+}
+
+.cursor-preview img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cursor-preview p {
+  color: #f0d9b5;
+  font-size: 12px;
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+/* Detail modal */
+.detail-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 13, 26, 0.95);
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-modal.open {
+  display: flex;
+}
+
+.modal-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.modal-content img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #d8c8b8;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* our story card */
+body {
+  background-color: #2a2118; /* poora page dark rehta hai */
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.note-card {
+  background-color: #e8dcc4; /* halka warm paper-jaisa cream color */
+  color: #3a2c1a; /* dark brown text - paper pe likhi ink jaisa */
+  padding: 40px;
+  margin-bottom: 50px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* card "float" kar rahi lage dark background pe */
+  position: relative;
+  transform: rotate(-0.5deg); /* halka sa tilt - handwritten/organic feel */
+}
+
+.note-card:nth-child(2) {
+  transform: rotate(0.5deg); /* har card thoda alag angle - natural lage */
+}
+
+.note-card h2 {
+  font-family: 'Playfair Display', serif; /* elegant serif font sirf headings ke liye */
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #4a3520;
+}
+
+.note-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.note-card p {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.value-item, .testimonial-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed rgba(58, 44, 26, 0.3); /* dashed line - handwritten note jaisa divider */
+}
+
+.value-item:last-child, .testimonial-item:last-child {
+  border-bottom: none;
+}
+
+.testimonial-item p {
+  font-style: italic;
+}
+
+.testimonial-item span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.note-card {
+  background-color: #e8dcc4;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(139, 90, 43, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 90, 43, 0.06) 0%, transparent 50%);
+  color: #3a2c1a;
+  padding: 48px;
+  margin-bottom: 35vh;
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), inset 0 0 60px rgba(139, 90, 43, 0.08);
+  position: relative;
+  border: 1px solid rgba(139, 90, 43, 0.2);
+}
+
+/* Decorative accent line under main heading */
+.note-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin-bottom: 8px;
+  color: #4a3520;
+  position: relative;
+  display: inline-block;
+}
+
+.note-card h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #8b5a2b;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.note-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #5a4530;
+}
+
+/* tested css for team */
+.team-section {
+  padding: 60px 20px;
+}
+
+.team-section > h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #f0d9b5;
+  margin-bottom: 40px;
+  /* align-items: ; */
+}
+
+.team-item {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #6b5a4a; /* muted, "inactive" state */
+  padding: 24px 0;
+  border-top: 1px solid rgba(230, 180, 100, 0.15);
+  cursor: pointer;
+  transition: color 0.4s ease, padding-left 0.4s ease;
+}
+
+.team-item:last-child {
+  border-bottom: 1px solid rgba(230, 180, 100, 0.15);
+}
+
+.team-item:hover {
+  color: #e6b464; /* bright gold on hover - clear contrast jump */
+  padding-left: 16px;
+}
+
+/* ===== CARD ENTRANCE ANIMATION ===== */
+.note-card {
+  opacity: 0;
+  transform: translateY(-30px) translateX(15px) rotate(-6deg);
+  transition: opacity 1.1s ease, transform 1.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.note-card.placed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) rotate(0deg);
+}

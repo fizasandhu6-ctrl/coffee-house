@@ -44,13 +44,20 @@ body.fade-out {
   gap: 8px;
 }
 
-.nav-links {
+.nav-links  {
+  text-decoration: none;
   display: flex;
   list-style: none;
   gap: 32px;
 }
 
 .nav-links li {
+  color: #d8c8b8;
+  cursor: pointer;
+}
+
+.nav-links li a {
+  text-decoration: none;
   color: #d8c8b8;
   cursor: pointer;
 }
@@ -63,7 +70,7 @@ body.fade-out {
 .hero {
   position: relative;
   height: 100vh;
-  overflow: hidden; /* zoom ke waqt image edges bahar na dikhein */
+  overflow: hidden; 
   display: flex;
   align-items: center;
 }

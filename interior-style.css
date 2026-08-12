@@ -14,9 +14,12 @@ body {
   transition: opacity 0.5s ease;
 }
 
+
+
+
 .exit-btn {
   position: absolute;
-  top: 24px;
+  top: 45px;
   left: 24px;
   background-color: rgba(0, 0, 0, 0.5);
   color: #f0d9b5;
@@ -70,6 +73,55 @@ body.fade-out {
   animation: fadeOutDrone 1.5s ease-in-out forwards;
   animation-delay: 1.5s; /* first 1.5s only drone short */
 }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+   z-index: 10;
+  opacity: 0;
+  animation: revealHotspot 0.8s ease-out forwards;
+  animation-delay: 3.2s; /* crossfade ke baad aaye, jaisa builder-hotspot */
+}
+
+.logo {
+  color: #f0d9b5;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links  {
+  text-decoration: none;
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-links li {
+  color: #d8c8b8;
+  cursor: pointer;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #d8c8b8;
+  cursor: pointer;
+}
+
+.nav-links li.active {
+  color: #e6b464;
+}
+
+
 
 /* POV view - drone ke baad fade in hoga */
 .pov {

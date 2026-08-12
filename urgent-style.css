@@ -1,0 +1,120 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+  background-color: #1a1410;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.logo { color: #f0d9b5; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+
+.back-btn {
+  color: #d8c8b8;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-btn:hover { color: #e6b464; }
+
+.urgent-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 20px 80px;
+}
+
+.urgent-container h1 {
+  color: #f0d9b5;
+  font-size: 32px;
+}
+
+.subtitle {
+  color: #a89a8c;
+  margin-bottom: 30px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.menu-card {
+  background-color: #2a2118;
+  border: 1px solid rgba(230, 180, 100, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.menu-card i { font-size: 28px; color: #e6b464; }
+
+.menu-card h3 { color: #f0d9b5; font-size: 15px; margin: 10px 0 4px; }
+
+.menu-card p { color: #a89a8c; font-size: 14px; margin-bottom: 12px; }
+
+.add-item-btn {
+  background-color: #e6b464;
+  color: #1a1410;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.cart-summary {
+  background-color: #2a2118;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.cart-summary h2 { color: #f0d9b5; margin-bottom: 16px; }
+
+#urgentOrderList { list-style: none; margin-bottom: 16px; }
+
+#urgentOrderList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  color: #d8c8b8;
+  font-size: 14px;
+}
+
+.remove-item-btn {
+  background: none;
+  border: none;
+  color: #a89a8c;
+  cursor: pointer;
+}
+
+.empty-state { color: #a89a8c; font-style: italic; text-align: center; padding: 20px; }
+
+#urgentPlaceOrderBtn {
+  width: 100%;
+  background-color: #e6b464;
+  color: #1a1410;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#urgentPlaceOrderBtn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+#urgentConfirmationMsg { color: #7fd88f; margin-top: 10px; text-align: center; }

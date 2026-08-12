@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Urgent Order — Coffee House</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="urgent-style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo"><i class="ri-cup-line"></i> COFFEE HOUSE</div>
+    <a href="landing.html" class="back-btn"><i class="ri-arrow-left-line"></i> Back</a>
+  </nav>
+
+  <div class="urgent-container">
+    <h1>Quick Order</h1>
+    <p class="subtitle">Skip the wait — order your favorite in seconds.</p>
+
+    <div class="menu-grid" id="menuGrid"></div>
+       
+      <!-- JS se items yahan render honge -->
+    <!-- </div> -->
+
+    <div class="cart-summary">
+      <h2><i class="ri-shopping-cart-2-line"></i> Your Order</h2>
+      <ul id="urgentOrderList"></ul>
+      <h3>Total: Rs. <span id="urgentTotal">0</span></h3>
+      <button id="urgentPlaceOrderBtn" disabled>Place Order</button>
+      <p id="urgentConfirmationMsg"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
