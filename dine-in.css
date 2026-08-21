@@ -1,0 +1,559 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #f3e4cc;
+
+    background:
+        linear-gradient(
+            rgba(20, 12, 8, 0.82),
+            rgba(20, 12, 8, 0.90)
+        ),
+        url("assets/dine-in-bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    width: 100%;
+
+    padding: 18px 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 10;
+
+    background: rgba(20, 12, 8, 0.45);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #f3e4cc;
+
+    text-decoration: none;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo i {
+    font-size: 23px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #ead8bd;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #e7b35d;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-btn {
+    position: absolute;
+
+    top: 88px;
+    left: 35px;
+
+    z-index: 20;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    background: rgba(35, 23, 15, 0.85);
+
+    border: 1px solid rgba(220, 170, 90, 0.35);
+
+    color: #f0dfc4;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.back-btn:hover {
+    background: #e2ad5a;
+
+    color: #25170e;
+
+    transform: translateX(-3px);
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.dine-page {
+    flex: 1;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 110px 20px 70px;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.dine-card {
+    width: min(700px, 95%);
+
+    padding: 42px;
+
+    background: rgba(38, 27, 18, 0.94);
+
+    border: 1px solid rgba(211, 161, 82, 0.45);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.page-header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.page-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #e7b35d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.page-label i {
+    font-size: 17px;
+}
+
+.page-header h1 {
+    margin-top: 10px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 38px;
+
+    color: #f4e3c7;
+}
+
+.page-header p {
+    margin-top: 8px;
+
+    color: #bda98e;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   TABLE AREA
+===================================================== */
+
+.table-area {
+    width: 100%;
+}
+
+.table-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.table-card {
+    position: relative;
+
+    min-height: 150px;
+
+    padding: 25px 15px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(211, 161, 82, 0.35);
+
+    background: rgba(54, 39, 27, 0.9);
+
+    color: #ead8bd;
+
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* TABLE NUMBER */
+
+.table-number {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    font-size: 11px;
+
+    color: #9e896f;
+}
+
+
+/* ICON */
+
+.table-card i {
+    font-size: 28px;
+
+    color: #dba653;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* TABLE NAME */
+
+.table-card strong {
+    font-size: 15px;
+}
+
+
+/* SEATS */
+
+.table-card small {
+    color: #a99781;
+
+    font-size: 11px;
+}
+
+
+/* HOVER */
+
+.table-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #dba653;
+
+    background: rgba(68, 47, 30, 0.95);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.table-card:hover i {
+    transform: scale(1.1);
+}
+
+
+/* SELECTED */
+
+.table-card.selected {
+    border-color: #e7b35d;
+
+    background: rgba(105, 70, 36, 0.9);
+
+    box-shadow:
+        0 0 0 2px rgba(231, 179, 93, 0.15),
+        0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.table-card.selected i {
+    color: #f1c674;
+}
+
+
+/* =====================================================
+   SELECTION BOX
+===================================================== */
+
+.selection-box {
+    margin-top: 25px;
+
+    padding: 15px 18px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(211, 161, 82, 0.25);
+
+    background: rgba(20, 13, 9, 0.45);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selection-box span {
+    color: #a99781;
+
+    font-size: 13px;
+}
+
+.selection-box strong {
+    color: #e7b35d;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+.continue-btn {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #e5b45f;
+
+    color: #25170e;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* DISABLED */
+
+.continue-btn:disabled {
+    background: #5c4830;
+
+    color: #9c8a73;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ACTIVE HOVER */
+
+.continue-btn:not(:disabled):hover {
+    background: #f0c875;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.table-message {
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: #e7b35d;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    padding: 20px;
+
+    text-align: center;
+
+    background: rgba(15, 9, 6, 0.65);
+
+    color: #927d66;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 16px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .back-btn {
+        left: 20px;
+        top: 75px;
+    }
+
+    .dine-page {
+        padding-top: 115px;
+    }
+
+    .dine-card {
+        padding: 30px 22px;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+    .table-grid {
+        gap: 12px;
+    }
+
+    .table-card {
+        min-height: 130px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .dine-card {
+        width: 100%;
+    }
+
+    .table-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 27px;
+    }
+}
