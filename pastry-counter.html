@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pastry Counter — Coffee House</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+   <link rel="stylesheet" href="pastry-style.css">
+
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo"><i class="ri-cup-line"></i> COFFEE HOUSE</div>
+    <a href="shop-interior.html" class="back-btn"><i class="ri-arrow-left-line"></i> Back</a>
+  </nav>
+
+  <div class="pastry-container">
+    <h1>Pastry Counter</h1>
+    <p class="subtitle">Fresh from Sami's kitchen, every morning.</p>
+
+    <div class="pastry-grid" id="pastryGrid"></div>
+
+    <div class="cart-summary">
+      <h2><i class="ri-shopping-cart-2-line"></i> Your Order</h2>
+      <ul id="pastryOrderList"></ul>
+      <h3>Total: Rs. <span id="pastryTotal">0</span></h3>
+      <button id="pastryPlaceOrderBtn" disabled>Place Order</button>
+      <p id="pastryConfirmationMsg"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -83,8 +83,13 @@ optionButtons.forEach(button => {
 if (addBtn) {
   addBtn.addEventListener('click', () => {
     if (!currentCoffee.type || !currentCoffee.milk || !currentCoffee.sugar) {
-      return;
-    }
+  if (confirmationMsg) {
+    confirmationMsg.textContent =
+      "Please select your coffee type, milk, and sugar first.";
+  }
+
+  return;
+}
 
     order.push({ ...currentCoffee });
 
@@ -222,6 +227,25 @@ internalLinks.forEach(link => {
 });
 
 // ======= about section =========
+
+// ===== SCROLL HINT FADE OUT =====
+const scrollHint = document.querySelector(".scroll-hint");
+
+window.addEventListener("scroll", () => {
+
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    if (scrollPosition >= pageHeight - 50) {
+        scrollHint.classList.add("hidden");
+    } else {
+        scrollHint.classList.remove("hidden");
+    }
+
+});
+
+
+
 const teamItems = document.querySelectorAll('.team-item');
 const cursorPreview = document.getElementById('cursorPreview');
 const previewImg = document.getElementById('previewImg');
@@ -300,7 +324,13 @@ if (menuGrid) {
     { name: "Cappuccino", price: 320, icon: "ri-cup-line" },
     { name: "Americano", price: 250, icon: "ri-cup-line" },
     { name: "Mocha", price: 380, icon: "ri-cup-line" },
-    { name: "Hot Chocolate", price: 300, icon: "ri-cup-line" }
+    { name: "Hot Chocolate", price: 300, icon: "ri-cup-line" },
+    { name: "Cardamom Croissant", price: 180, icon: "ri-cake-3-line" },
+    { name: "Chocolate Muffin", price: 150, icon: "ri-cake-3-line" },
+    { name: "Cinnamon Roll", price: 200, icon: "ri-cake-3-line" },
+    { name: "Butter Cookie (3pc)", price: 120, icon: "ri-cake-3-line" },
+    { name: "Cheesecake Slice", price: 280, icon: "ri-cake-3-line" },
+    { name: "Almond Biscotti", price: 100, icon: "ri-cake-3-line" }
   ];
 
   let urgentOrder = []; // { name, price, quantity }
@@ -383,3 +413,579 @@ if (menuGrid) {
   renderMenu();
   renderUrgentOrder();
 }
+
+
+
+// ===== PASTRY COUNTER PAGE =====
+const pastryGrid = document.getElementById('pastryGrid');
+
+if (pastryGrid) {
+
+  const pastryItems = [
+    {
+      name: "Cardamom Croissant",
+      price: 180,
+      image: "assets/croissant.png"
+    },
+    {
+      name: "Chocolate Muffin",
+      price: 150,
+      image: "assets/muffin.png"
+    },
+    {
+      name: "Cinnamon Roll",
+      price: 200,
+      image: "assets/cinnamon-roll.png"
+    },
+    {
+      name: "Butter Cookie (3pc)",
+      price: 120,
+      image: "assets/butter-cookie.png"
+    },
+    {
+      name: "Cheesecake Slice",
+      price: 280,
+      image: "assets/cheesecake.png"
+    },
+    {
+      name: "Almond Biscotti",
+      price: 100,
+      image: "assets/biscotti.png"
+    }
+  ];
+
+  let pastryOrder = [];
+
+
+  // =========================
+  // RENDER PASTRY CARDS
+  // =========================
+
+  function renderPastryGrid() {
+
+    pastryGrid.innerHTML = '';
+
+    pastryItems.forEach(item => {
+
+      const card = document.createElement('div');
+
+      card.classList.add('menu-card');
+
+      card.innerHTML = `
+        <img 
+          src="${item.image}" 
+          alt="${item.name}" 
+          class="pastry-image"
+        >
+
+        <h3>${item.name}</h3>
+
+        <p>Rs. ${item.price}</p>
+
+        <button class="add-item-btn">
+          + Add
+        </button>
+      `;
+
+      card
+        .querySelector('.add-item-btn')
+        .addEventListener('click', () => {
+          addToPastryOrder(item);
+        });
+
+      pastryGrid.appendChild(card);
+    });
+  }
+
+
+  // =========================
+  // ADD TO ORDER
+  // =========================
+
+  function addToPastryOrder(item) {
+
+    const existing = pastryOrder.find(
+      o => o.name === item.name
+    );
+
+    if (existing) {
+
+      existing.quantity += 1;
+
+    } else {
+
+      pastryOrder.push({
+        ...item,
+        quantity: 1
+      });
+
+    }
+
+    renderPastryOrder();
+  }
+
+
+  // =========================
+  // RENDER ORDER
+  // =========================
+
+  function renderPastryOrder() {
+
+    const list = document.getElementById(
+      'pastryOrderList'
+    );
+
+    list.innerHTML = '';
+
+
+    // Empty order
+    if (pastryOrder.length === 0) {
+
+      list.innerHTML = `
+        <li class="empty-state">
+          No pastries yet — pick something sweet above 🍰
+        </li>
+      `;
+
+    } else {
+
+      // Items in order
+      pastryOrder.forEach((item, index) => {
+
+        const li = document.createElement('li');
+
+        li.innerHTML = `
+          <span>
+            ${item.name} x${item.quantity}
+            — Rs. ${item.price * item.quantity}
+          </span>
+
+          <button 
+            class="remove-item-btn" 
+            data-index="${index}"
+          >
+            ✕
+          </button>
+        `;
+
+        li
+          .querySelector('.remove-item-btn')
+          .addEventListener('click', () => {
+
+            pastryOrder = pastryOrder.filter(
+              (_, i) => i !== index
+            );
+
+            renderPastryOrder();
+          });
+
+        list.appendChild(li);
+      });
+    }
+
+
+    // =========================
+    // CALCULATE TOTAL
+    // =========================
+
+    const total = pastryOrder.reduce(
+      (sum, item) =>
+        sum + (item.price * item.quantity),
+      0
+    );
+
+    document.getElementById(
+      'pastryTotal'
+    ).textContent = total;
+
+
+    // =========================
+    // PLACE ORDER BUTTON
+    // =========================
+
+    const placeBtn =
+      document.getElementById(
+        'pastryPlaceOrderBtn'
+      );
+
+    if (placeBtn) {
+
+      placeBtn.disabled =
+        pastryOrder.length === 0;
+    }
+  }
+
+
+  // =========================
+  // PLACE ORDER
+  // =========================
+
+  const pastryPlaceBtn =
+    document.getElementById(
+      'pastryPlaceOrderBtn'
+    );
+
+  if (pastryPlaceBtn) {
+
+    pastryPlaceBtn.addEventListener(
+      'click',
+      (e) => {
+
+        document.getElementById(
+          'pastryConfirmationMsg'
+        ).textContent =
+          "✅ Order placed! Fresh from the oven.";
+
+        createSparkles(
+          e.clientX,
+          e.clientY
+        );
+
+        pastryOrder = [];
+
+        renderPastryOrder();
+
+
+        setTimeout(() => {
+
+          document.getElementById(
+            'pastryConfirmationMsg'
+          ).textContent = '';
+
+        }, 3000);
+      }
+    );
+  }
+
+
+  // =========================
+  // INITIAL RENDER
+  // =========================
+
+  renderPastryGrid();
+
+  renderPastryOrder();
+}
+
+
+
+/* =====================================================
+   MENU CATEGORY TABS
+===================================================== */
+
+const tabButtons = document.querySelectorAll(".tab-btn");
+
+
+tabButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const targetId = button.dataset.tab;
+
+        const targetSection = document.getElementById(targetId);
+
+
+        /* Remove active from all tabs */
+
+        tabButtons.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+
+        /* Activate clicked tab */
+
+        button.classList.add("active");
+
+
+        /* Scroll to section */
+
+        if (targetSection) {
+
+            const navbarHeight = document.querySelector(".navbar")?.offsetHeight || 0;
+
+            const targetPosition =
+                targetSection.getBoundingClientRect().top +
+                window.scrollY -
+                navbarHeight -
+                35;
+
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+let cart = JSON.parse(localStorage.getItem("coffeeHouseCart")) || [];
+
+
+/* =====================================================
+   UPDATE CART COUNT
+===================================================== */
+
+// function updateCartCount() {
+
+//     const cartCount = document.getElementById("cartCount");
+
+//     if (!cartCount) return;
+
+
+//     /*
+//        Total quantity calculate kar rahe hain.
+//        Example:
+//        Latte x2
+//        Mocha x1
+
+//        Count = 3
+//     */
+
+//     const totalItems = cart.reduce(
+//         (total, item) => total + item.quantity,
+//         0
+//     );
+
+
+//     cartCount.textContent = totalItems;
+
+// }
+
+
+
+// /* =====================================================
+//    ADD ITEM TO CART
+// ===================================================== */
+
+// const addButtons = document.querySelectorAll(
+//     ".add-btn, .small-add-btn"
+// );
+
+
+// addButtons.forEach((button) => {
+
+//     button.addEventListener("click", () => {
+
+//         const name = button.dataset.name;
+
+//         const price = Number(button.dataset.price);
+
+
+//         /* Check if item already exists */
+
+//         const existingItem = cart.find(
+//             item => item.name === name
+//         );
+
+
+//         if (existingItem) {
+
+//             existingItem.quantity += 1;
+
+//         } else {
+
+//             cart.push({
+//                 name: name,
+//                 price: price,
+//                 quantity: 1
+//             });
+
+//         }
+
+
+//         /* Save cart */
+
+//         localStorage.setItem(
+//             "coffeeHouseCart",
+//             JSON.stringify(cart)
+//         );
+
+
+//         /* Update count */
+
+//         updateCartCount();
+
+
+//         /* Button feedback */
+
+//         const originalText = button.textContent;
+
+//         button.textContent = "✓ Added";
+
+//         button.classList.add("added");
+
+
+//         setTimeout(() => {
+
+//             button.textContent = originalText;
+
+//             button.classList.remove("added");
+
+//         }, 900);
+
+//     });
+
+// });
+
+
+
+// /* =====================================================
+//    MY ORDER BUTTON
+// ===================================================== */
+
+// const orderButton = document.getElementById("orderBtn");
+
+
+// if (orderButton) {
+
+//     orderButton.addEventListener("click", () => {
+
+//         /*
+//            Abhi actual order page create nahi ki.
+//            Filhal user ko order page par bhejne
+//            ke liye ye line use kar sakti ho.
+//         */
+
+//         if (cart.length > 0) {
+
+//             window.location.href = "my-order.html";
+
+//         } else {
+
+//             alert("Your order is empty. Add something first!");
+
+//         }
+
+//     });
+
+// }
+
+
+
+// /* =====================================================
+//    INITIAL CART COUNT
+// ===================================================== */
+
+// updateCartCount();
+
+
+// =========================================================
+// CONTACT FORM
+// =========================================================
+
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+
+        // Clear previous message
+        formMessage.textContent = "";
+        formMessage.className = "form-message";
+
+
+        // Basic validation
+        if (!name || !email || !subject || !message) {
+
+            formMessage.textContent =
+                "Please fill in all the fields.";
+
+            formMessage.classList.add("error");
+
+            return;
+        }
+
+
+        // Simple email validation
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+
+            formMessage.textContent =
+                "Please enter a valid email address.";
+
+            formMessage.classList.add("error");
+
+            return;
+        }
+
+
+        // Success
+        formMessage.textContent =
+            "✓ Message received! We'll get back to you soon.";
+
+        formMessage.classList.add("success");
+
+
+        // Clear form
+        contactForm.reset();
+
+    });
+}
+
+
+// =========================================================
+// MY ORDER COUNT
+// =========================================================
+
+const orderCount = document.getElementById("orderCount");
+
+function updateOrderCount() {
+
+    if (!orderCount) return;
+
+    let order = [];
+
+    try {
+
+        order =
+            JSON.parse(
+                localStorage.getItem("coffeeHouseOrder")
+            ) || [];
+
+    } catch (error) {
+
+        order = [];
+
+    }
+
+
+    // Count total quantity
+    const totalItems = order.reduce(
+        (total, item) => {
+
+            return total + (Number(item.quantity) || 1);
+
+        },
+        0
+    );
+
+
+    orderCount.textContent = totalItems;
+}
+
+
+// Run when page loads
+updateOrderCount();
+
+
+

@@ -1,0 +1,937 @@
+/* =========================================================
+   COFFEE HOUSE — PASTRY COUNTER
+   Exact CSS for your current HTML + JS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #f3dfc5;
+
+    background:
+        linear-gradient(
+            rgba(10, 7, 5, 0.68),
+            rgba(10, 7, 5, 0.84)
+        ),
+        url("pastry-bg.jpg") center / cover fixed no-repeat;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: rgba(15, 9, 6, 0.72);
+
+    border-bottom: 1px solid rgba(196, 139, 70, 0.22);
+
+    backdrop-filter: blur(10px);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #f2d09b;
+
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo i {
+    color: #d89a4b;
+    font-size: 25px;
+}
+
+
+/* Back button */
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 17px;
+
+    color: #e8c99b;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    background: rgba(53, 32, 19, 0.7);
+
+    border: 1px solid #76502d;
+
+    border-radius: 9px;
+
+    transition: all 0.3s ease;
+}
+
+.back-btn i {
+    font-size: 17px;
+}
+
+.back-btn:hover {
+    background: #c4863b;
+
+    border-color: #c4863b;
+
+    color: #1b1008;
+
+    transform: translateX(-3px);
+
+    box-shadow: 0 0 18px rgba(211, 146, 62, 0.25);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.pastry-container {
+    width: min(1350px, 92%);
+
+    margin: auto;
+
+    padding: 55px 0 70px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.pastry-container > h1 {
+    text-align: center;
+
+    color: #f1ce96;
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    line-height: 1.1;
+
+    text-shadow:
+        0 0 25px rgba(218, 153, 71, 0.16);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.subtitle {
+    text-align: center;
+
+    color: #ae9679;
+
+    font-size: 14px;
+
+    margin-bottom: 42px;
+}
+
+.subtitle::before {
+    content: "✦";
+
+    color: #c88b3c;
+
+    margin-right: 12px;
+}
+
+.subtitle::after {
+    content: "✦";
+
+    color: #c88b3c;
+
+    margin-left: 12px;
+}
+
+
+/* =========================================================
+   PASTRY GRID
+========================================================= */
+
+.pastry-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   PASTRY CARD
+   JS creates .menu-card
+========================================================= */
+
+.menu-card {
+    position: relative;
+
+    min-height: 335px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(53, 33, 21, 0.96),
+            rgba(19, 12, 8, 0.98)
+        );
+
+    border: 1px solid rgba(184, 125, 55, 0.48);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.45),
+        inset 0 0 30px rgba(187, 120, 42, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* top decorative glow */
+
+.menu-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 18%;
+
+    width: 64%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c58a43,
+            transparent
+        );
+
+    opacity: 0.7;
+}
+
+
+/* subtle background glow */
+
+.menu-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    top: 30px;
+
+    border-radius: 50%;
+
+    background: rgba(187, 122, 46, 0.05);
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+/* Hover */
+
+.menu-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #d39747;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(204, 137, 50, 0.14);
+}
+
+
+/* =========================================================
+   PASTRY ICON
+========================================================= */
+
+/* .menu-card > i {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 155px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 82px;
+
+    color: #d79a50;
+
+    filter:
+        drop-shadow(0 10px 9px rgba(0, 0, 0, 0.55));
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+} */
+
+
+.menu-card > .pastry-image {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 155px;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 10px 9px rgba(0, 0, 0, 0.55));
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+
+.menu-card:hover > .pastry-image {
+    transform: scale(1.08) translateY(-4px);
+
+    filter:
+        drop-shadow(0 14px 12px rgba(0, 0, 0, 0.65));
+}
+
+
+/* icon hover */
+
+.menu-card:hover > i {
+    transform: scale(1.1) translateY(-4px);
+
+    color: #e3ad65;
+}
+
+
+/* =========================================================
+   PASTRY NAME
+========================================================= */
+
+.menu-card h3 {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    color: #f0d1a5;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    margin: 5px 0;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.menu-card p {
+    position: relative;
+    z-index: 2;
+
+    color: #dda052;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin: 4px 0 14px;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.add-item-btn {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    padding: 12px 18px;
+
+    border: 1px solid #bd7d35;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #69411d,
+            #976027
+        );
+
+    color: #ffe5b8;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.add-item-btn:hover {
+    background: #d09240;
+
+    color: #1b1008;
+
+    border-color: #e0a65a;
+
+    box-shadow:
+        0 0 20px rgba(218, 151, 63, 0.32);
+
+    transform: translateY(-2px);
+}
+
+.add-item-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   CART SUMMARY
+========================================================= */
+
+.cart-summary {
+    margin-top: 32px;
+
+    padding: 27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(48, 29, 18, 0.97),
+            rgba(15, 9, 6, 0.98)
+        );
+
+    border: 1px solid rgba(190, 129, 55, 0.52);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================================
+   ORDER TITLE
+========================================================= */
+
+.cart-summary h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #f0d1a2;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid rgba(193, 132, 58, 0.22);
+}
+
+.cart-summary h2 i {
+    color: #d6994a;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   ORDER LIST
+========================================================= */
+
+#pastryOrderList {
+    list-style: none;
+
+    min-height: 115px;
+
+    padding: 10px 0;
+}
+
+
+/* order item */
+
+#pastryOrderList li {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    color: #dfc39d;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+
+/* =========================================================
+   EMPTY ORDER
+========================================================= */
+
+#pastryOrderList .empty-state {
+    min-height: 115px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #927d65;
+
+    font-size: 14px;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   REMOVE BUTTON
+========================================================= */
+
+.remove-item-btn {
+    flex-shrink: 0;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(188, 105, 68, 0.5);
+
+    border-radius: 7px;
+
+    background: rgba(100, 40, 27, 0.4);
+
+    color: #d99372;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.remove-item-btn:hover {
+    background: #9c4b35;
+
+    color: white;
+
+    border-color: #c76b4c;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.cart-summary h3 {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 17px;
+
+    margin-top: 5px;
+
+    color: #ddc096;
+
+    font-size: 17px;
+
+    border-top: 1px solid rgba(193, 132, 58, 0.23);
+}
+
+
+#pastryTotal {
+    color: #e4a14e;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PLACE ORDER
+========================================================= */
+
+#pastryPlaceOrderBtn {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c88432,
+            #dfa756
+        );
+
+    color: #1b1008;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+#pastryPlaceOrderBtn:hover:not(:disabled) {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(211, 143, 48, 0.35);
+}
+
+#pastryPlaceOrderBtn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+#pastryPlaceOrderBtn:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+    filter: grayscale(0.5);
+}
+
+
+/* =========================================================
+   CONFIRMATION
+========================================================= */
+
+#pastryConfirmationMsg {
+    min-height: 20px;
+
+    margin-top: 14px;
+
+    text-align: center;
+
+    color: #dba45d;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SPARKLES
+   Your JS creates .sparkle elements
+========================================================= */
+
+.sparkle {
+    position: fixed;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #e7ae5d;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    animation: sparkleMove 0.7s ease-out forwards;
+}
+
+@keyframes sparkleMove {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(var(--dx), var(--dy))
+            scale(0);
+    }
+}
+
+
+/* =========================================================
+   PAGE FADE
+   Your JS already adds .fade-out
+========================================================= */
+
+body {
+    opacity: 1;
+
+    transition: opacity 0.5s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .pastry-container {
+        width: 90%;
+    }
+
+    .pastry-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 17px;
+    }
+
+    .menu-card {
+        min-height: 330px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    .navbar {
+        height: 68px;
+
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .logo i {
+        font-size: 21px;
+    }
+
+    .back-btn {
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+    .pastry-container {
+        width: 92%;
+
+        padding: 40px 0 50px;
+    }
+
+    .pastry-container > h1 {
+        font-size: 38px;
+
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+
+        line-height: 1.6;
+
+        margin: 12px 10px 30px;
+    }
+
+    .pastry-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .menu-card {
+        min-height: 325px;
+
+        padding: 18px;
+    }
+
+    /* .menu-card > i {
+        height: 145px;
+
+        font-size: 75px;
+    } */
+
+    .menu-card > .pastry-image {
+    height: 145px;
+}
+
+    .cart-summary {
+        margin-top: 22px;
+
+        padding: 20px;
+    }
+
+    .cart-summary h2 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .pastry-container > h1 {
+        font-size: 32px;
+    }
+
+    .menu-card {
+        min-height: 310px;
+    }
+
+    .menu-card > i {
+        height: 135px;
+
+        font-size: 68px;
+    }
+
+    .menu-card h3 {
+        font-size: 18px;
+    }
+
+    .add-item-btn {
+        padding: 11px;
+    }
+
+    .cart-summary {
+        padding: 17px;
+    }
+
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #f3dfc5;
+
+    background:
+        linear-gradient(
+            rgba(10, 7, 5, 0.68),
+            rgba(10, 7, 5, 0.84)
+        ),
+        url("assets/shop-pov.png") center / cover fixed no-repeat;
+
+    overflow-x: hidden;
+}

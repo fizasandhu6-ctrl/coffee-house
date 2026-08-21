@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Menu — Coffee House</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="menu-style.css">
+</head>
+
+
+<body>
+
+    <div class="main-page">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <nav class="navbar">
+
+            <a href="landing.html" class="logo">
+                <i class="ri-cup-line"></i>
+
+                <div class="logo-text">
+                    <strong>COFFEE HOUSE</strong>
+                    <span>BREWED WITH LOVE</span>
+                </div>
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="landing.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="menu.html" class="active">Menu</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <!-- <button class="order-btn" id="orderBtn">
+
+                <span>MY ORDER</span>
+
+                <i class="ri-shopping-bag-line"></i>
+
+                <span class="cart-count" id="cartCount">0</span>
+
+            </button> -->
+
+        </nav>
+
+
+        <!-- ================= HERO ================= -->
+
+        <header class="menu-hero">
+
+            <img
+                src="assets/menu-hero.png"
+                alt="Coffee House interior"
+                class="hero-bg-img"
+            >
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-icon">
+                    <i class="ri-cup-line"></i>
+                </div>
+
+
+                <div class="hero-decoration">
+                    <span>❧</span>
+                    <span>❧</span>
+                    <span>❧</span>
+                </div>
+
+
+                <h1>OUR MENU</h1>
+
+                <p>Freshly brewed. Carefully baked.</p>
+
+
+                <div class="hero-line">
+                    <span></span>
+                    <i class="ri-heart-fill"></i>
+                    <span></span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CATEGORY TABS ================= -->
+
+        <div class="category-wrapper">
+
+            <div class="category-tabs">
+
+                <button
+                    class="tab-btn active"
+                    data-tab="coffee"
+                >
+                    COFFEE
+                </button>
+
+
+                <button
+                    class="tab-btn"
+                    data-tab="pastries"
+                >
+                    PASTRIES
+                </button>
+
+
+                <button
+                    class="tab-btn"
+                    data-tab="specials"
+                >
+                    SPECIALS
+                </button>
+
+
+                <button
+                    class="tab-btn"
+                    data-tab="cold-drinks"
+                >
+                    COLD DRINKS
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN MENU ================= -->
+
+    <main class="menu-container">
+
+
+        <!-- ================= COFFEE ================= -->
+
+        <section class="menu-section" id="coffee">
+
+            <div class="section-heading">
+
+                <span></span>
+
+                <h2>
+                    <i class="ri-cup-line"></i>
+                    COFFEE
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="menu-grid">
+
+
+                <!-- Espresso -->
+
+                <div
+                    class="menu-item"
+                    data-name="Espresso"
+                    data-price="200"
+                >
+
+                    <img
+                        src="assets/espresso.png"
+                        alt="Espresso"
+                    >
+
+                    <h3>Espresso</h3>
+
+                    <p>
+                        Rich & concentrated espresso.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 200
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Espresso"
+                            data-price="200"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Latte -->
+
+                <div
+                    class="menu-item"
+                    data-name="Latte"
+                    data-price="350"
+                >
+
+                    <img
+                        src="assets/latte.png"
+                        alt="Latte"
+                    >
+
+                    <h3>Latte</h3>
+
+                    <p>
+                        Smooth espresso with steamed milk.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 350
+                        </span>
+<!-- 
+                        <button
+                            class="add-btn"
+                            data-name="Latte"
+                            data-price="350"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Cappuccino -->
+
+                <div
+                    class="menu-item"
+                    data-name="Cappuccino"
+                    data-price="320"
+                >
+
+                    <img
+                        src="assets/cappuccino.png"
+                        alt="Cappuccino"
+                    >
+
+                    <h3>Cappuccino</h3>
+
+                    <p>
+                        Espresso, steamed milk & a layer of foam.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 320
+                        </span>
+
+                           <!-- class="add-btn"
+                            data-name="Cappuccino"
+                            data-price="320"
+                        >
+                            + Add
+                        </button>     <button -->
+                    
+
+                    </div>
+
+                </div>
+
+
+                <!-- Americano -->
+
+                <div
+                    class="menu-item"
+                    data-name="Americano"
+                    data-price="250"
+                >
+
+                    <img
+                        src="assets/americano.png"
+                        alt="Americano"
+                    >
+
+                    <h3>Americano</h3>
+
+                    <p>
+                        Espresso with hot water.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 250
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Americano"
+                            data-price="250"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Mocha -->
+
+                <div
+                    class="menu-item"
+                    data-name="Mocha"
+                    data-price="380"
+                >
+
+                    <img
+                        src="assets/mocha.png"
+                        alt="Mocha"
+                    >
+
+                    <h3>Mocha</h3>
+
+                    <p>
+                        Chocolate + espresso with steamed milk.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 380
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Mocha"
+                            data-price="380"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Caramel Latte -->
+
+                <div
+                    class="menu-item"
+                    data-name="Caramel Latte"
+                    data-price="340"
+                >
+
+                    <img
+                        src="assets/caramel-latte.png"
+                        alt="Caramel Latte"
+                    >
+
+                    <h3>Caramel Latte</h3>
+
+                    <p>
+                        Latte with rich caramel.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 340
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Caramel Latte"
+                            data-price="340"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-action">
+
+                <a
+                    href="index.html"
+                    class="menu-cta"
+                >
+                    Build Your Coffee
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PASTRIES ================= -->
+
+        <section class="menu-section" id="pastries">
+
+            <div class="section-heading">
+
+                <span></span>
+
+                <h2>
+                    <i class="ri-cake-3-line"></i>
+                    PASTRIES
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="menu-grid">
+
+
+                <!-- Croissant -->
+
+                <div class="menu-item">
+
+                    <img
+                        src="assets/croissant.png"
+                        alt="Cardamom Croissant"
+                    >
+
+                    <h3>Cardamom Croissant</h3>
+
+                    <p>
+                        Buttery, flaky, with a hint of cardamom.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 180
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Cardamom Croissant"
+                            data-price="180"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Muffin -->
+
+                <div class="menu-item">
+
+                    <img
+                        src="assets/muffin.png"
+                        alt="Chocolate Muffin"
+                    >
+
+                    <h3>Chocolate Muffin</h3>
+
+                    <p>
+                        Rich cocoa muffin, freshly baked.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 150
+                        </span>
+<!-- 
+                        <button
+                            class="add-btn"
+                            data-name="Chocolate Muffin"
+                            data-price="150"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Cinnamon Roll -->
+
+                <div class="menu-item">
+
+                    <img
+                        src="assets/cinnamon-roll.png"
+                        alt="Cinnamon Roll"
+                    >
+
+                    <h3>Cinnamon Roll</h3>
+
+                    <p>
+                        Soft roll with warm cinnamon glaze.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 200
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Cinnamon Roll"
+                            data-price="200"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Butter Cookie -->
+
+                <div class="menu-item">
+
+                    <img
+                        src="assets/butter-cookie.png"
+                        alt="Butter Cookie"
+                    >
+
+                    <h3>Butter Cookie (3pc)</h3>
+
+                    <p>
+                        Classic, crumbly, and buttery.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 120
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Butter Cookie"
+                            data-price="120"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Cheesecake -->
+
+                <div class="menu-item">
+
+                    <img
+                        src="assets/cheesecake.png"
+                        alt="Cheesecake Slice"
+                    >
+
+                    <h3>Cheesecake Slice</h3>
+
+                    <p>
+                        Creamy cheesecake with berry topping.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 280
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Cheesecake Slice"
+                            data-price="280"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Biscotti -->
+
+                <div class="menu-item">
+
+                    <img
+                        src="assets/biscotti.png"
+                        alt="Almond Biscotti"
+                    >
+
+                    <h3>Almond Biscotti</h3>
+
+                    <p>
+                        Crunchy, nutty, twice-baked.
+                    </p>
+
+                    <div class="item-bottom">
+
+                        <span class="price">
+                            Rs. 100
+                        </span>
+
+                        <!-- <button
+                            class="add-btn"
+                            data-name="Almond Biscotti"
+                            data-price="100"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-action">
+
+                <a
+                    href="pastry-counter.html"
+                    class="menu-cta"
+                >
+                    Visit Pastry Counter
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SPECIALS + COLD DRINKS ================= -->
+
+        <div class="split-section">
+
+
+            <!-- HOUSE SPECIALS -->
+
+            <section
+                class="menu-section-small"
+                id="specials"
+            >
+
+                <div class="section-heading">
+
+                    <span></span>
+
+                    <h2>
+                        <i class="ri-star-fill"></i>
+                        HOUSE SPECIALS
+                    </h2>
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="special-list">
+
+
+                    <div class="special-item">
+
+                        <img
+                            src="assets/midnight-mocha.png"
+                            alt="Midnight Mocha"
+                        >
+
+                        <h3>Midnight Mocha</h3>
+
+                        <p>
+                            Dark chocolate, espresso & steamed milk.
+                        </p>
+
+                        <div class="item-bottom">
+
+                            <span class="price">
+                                Rs. 350
+                            </span>
+
+                            <!-- <button
+                                class="add-btn"
+                                data-name="Midnight Mocha"
+                                data-price="350"
+                            >
+                                + Add
+                            </button> -->
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="special-item">
+
+                        <img
+                            src="assets/caramel-cloud.png"
+                            alt="Caramel Cloud"
+                        >
+
+                        <h3>Caramel Cloud</h3>
+
+                        <p>
+                            Espresso, caramel & creamy foam.
+                        </p>
+
+                        <div class="item-bottom">
+
+                            <span class="price">
+                                Rs. 330
+                            </span>
+
+                            <!-- <button
+                                class="add-btn"
+                                data-name="Caramel Cloud"
+                                data-price="330"
+                            >
+                                + Add
+                            </button> -->
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="special-item">
+
+                        <img
+                            src="assets/hazelnut-latte.png"
+                            alt="Hazelnut Latte"
+                        >
+
+                        <h3>Hazelnut Latte</h3>
+
+                        <p>
+                            Espresso, roasted hazelnut & milk.
+                        </p>
+
+                        <div class="item-bottom">
+
+                            <span class="price">
+                                Rs. 340
+                            </span>
+
+                            <!-- <button
+                                class="add-btn"
+                                data-name="Hazelnut Latte"
+                                data-price="340"
+                            >
+                                + Add
+                            </button> -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- COLD DRINKS -->
+
+            <section
+                class="menu-section-small"
+                id="cold-drinks"
+            >
+
+                <div class="section-heading">
+
+                    <span></span>
+
+                    <h2>
+                        <i class="ri-snowflake-line"></i>
+                        COLD DRINKS
+                    </h2>
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="cold-drinks-list">
+
+
+                    <div class="cold-drink-row">
+
+                        <img
+                            src="assets/iced-latte.png"
+                            alt="Iced Latte"
+                        >
+
+                        <div class="cold-drink-info">
+
+                            <h3>Iced Latte</h3>
+
+                            <p>
+                                Chilled espresso with milk & ice.
+                            </p>
+
+                        </div>
+
+                        <span class="price">
+                            Rs. 280
+                        </span>
+
+                        <!-- <button
+                            class="small-add-btn"
+                            data-name="Iced Latte"
+                            data-price="280"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+
+
+                    <div class="cold-drink-row">
+
+                        <img
+                            src="assets/iced-mocha.png"
+                            alt="Iced Mocha"
+                        >
+
+                        <div class="cold-drink-info">
+
+                            <h3>Iced Mocha</h3>
+
+                            <p>
+                                Chocolate + espresso over ice.
+                            </p>
+
+                        </div>
+
+                        <span class="price">
+                            Rs. 320
+                        </span>
+
+                        <!-- <button
+                            class="small-add-btn"
+                            data-name="Iced Mocha"
+                            data-price="320"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+
+
+                    <div class="cold-drink-row">
+
+                        <img
+                            src="assets/caramel-drink.png"
+                            alt="Caramel Iced Coffee"
+                        >
+
+                        <div class="cold-drink-info">
+
+                            <h3>Caramel Iced Coffee</h3>
+
+                            <p>
+                                Caramel, milk & cold espresso.
+                            </p>
+
+                        </div>
+
+                        <span class="price">
+                            Rs. 340
+                        </span>
+
+                        <!-- <button
+                            class="small-add-btn"
+                            data-name="Caramel Iced Coffee"
+                            data-price="340"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+
+
+                    <div class="cold-drink-row">
+
+                        <img
+                            src="assets/cold-brew.png"
+                            alt="Cold Brew"
+                        >
+
+                        <div class="cold-drink-info">
+
+                            <h3>Cold Brew</h3>
+
+                            <p>
+                                Smooth, bold & refreshing.
+                            </p>
+
+                        </div>
+
+                        <span class="price">
+                            Rs. 300
+                        </span>
+
+                        <!-- <button
+                            class="small-add-btn"
+                            data-name="Cold Brew"
+                            data-price="300"
+                        >
+                            + Add
+                        </button> -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ================= BOTTOM CTA ================= -->
+
+        <section class="bottom-cta">
+
+            <div class="cta-image">
+
+                <img
+                    src="assets/latte.png"
+                    alt="Coffee"
+                >
+
+            </div>
+
+
+            <div class="cta-content">
+
+                <span class="cta-small">
+                    CAN'T DECIDE?
+                </span>
+
+                <h2>
+                    Build your perfect coffee,
+                    just the way you like it.
+                </h2>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="build-btn"
+            >
+                BUILD YOUR COFFEE
+                <i class="ri-arrow-right-line"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="menu-footer">
+
+        <p>
+            © 2026 Coffee House.
+            Brewed with love.
+        </p>
+
+    </footer>
+
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

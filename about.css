@@ -32,6 +32,31 @@ html {
   animation-delay: 2.3s; */
 }
 
+/* ===== SCROLL HINT ===== */
+.scroll-hint {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #deaf84;
+  font-size: 12px;
+   z-index: 5;
+  /* opacity: 0; */
+  /* animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 3s; */
+}
+
+.scroll-hint {
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.scroll-hint.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
 .logo {
   color: #f0d9b5;
   font-weight: 700;
@@ -309,4 +334,27 @@ body {
 .note-card.placed {
   opacity: 1;
   transform: translateY(0) translateX(0) rotate(0deg);
+}
+
+/* BACKGROUND CHECK ONLY */
+/* background */
+body {
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #f3dfc5;
+
+    background:
+        linear-gradient(
+            rgba(10, 7, 5, 0.68),
+            rgba(10, 7, 5, 0.84)
+        ),
+        url("assets/shop-pov.png") center / cover fixed no-repeat;
+
+    overflow-x: hidden;
+}
+
+.team-section{
+  background-color: #1a120c;
 }

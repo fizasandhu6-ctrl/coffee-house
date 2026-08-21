@@ -163,3 +163,45 @@ body.fade-out {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* pastry hotspot */
+.pastry-hotspot {
+  position: absolute;
+  bottom: 45%; /* image dekh kar adjust karna - display case ke paas */
+  left: 55%;
+  background-color: rgba(230, 180, 100, 0.9);
+  color: #1a1410;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0;
+  animation: revealHotspot 0.8s ease-out forwards;
+  animation-delay: 3.2s; /* dono images crossfade khatam hone ke baad aayega */
+  z-index: 5;
+}
+
+.pastry-hotspot:hover {
+    background: #c4863b;
+
+    border-color: #c4863b;
+
+    color: #1b1008;
+
+    transform: translateX(-3px);
+
+    box-shadow: 0 0 18px rgba(211, 146, 62, 0.25);
+}
+
+.builder-hotspot:hover {
+    background: #c4863b;
+
+    border-color: #c4863b;
+
+    color: #1b1008;
+
+    transform: translateX(-3px);
+
+    box-shadow: 0 0 18px rgba(211, 146, 62, 0.25);
+}

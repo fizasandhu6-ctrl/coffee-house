@@ -61,7 +61,7 @@ body {
 
 .menu-card p { color: #a89a8c; font-size: 14px; margin-bottom: 12px; }
 
-.add-item-btn {
+/* .add-item-btn {
   background-color: #e6b464;
   color: #1a1410;
   border: none;
@@ -70,6 +70,61 @@ body {
   cursor: pointer;
   font-weight: 600;
   font-size: 13px;
+  box-shadow:
+        0 0 20px rgba(218, 151, 63, 0.32);
+
+    transform: translateY(-2px);
+} */
+
+.add-item-btn {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    padding: 12px 18px;
+
+    border: 1px solid #bd7d35;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #69411d,
+            #976027
+        );
+
+    color: #ffe5b8;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.add-item-btn:hover {
+    background: #d09240;
+
+    color: #1b1008;
+
+    border-color: #e0a65a;
+
+    box-shadow:
+        0 0 20px rgba(218, 151, 63, 0.32);
+
+    transform: translateY(-2px);
+}
+
+.add-item-btn:active {
+    transform: scale(0.97);
 }
 
 .cart-summary {
@@ -118,3 +173,23 @@ body {
 #urgentPlaceOrderBtn:disabled { opacity: 0.3; cursor: not-allowed; }
 
 #urgentConfirmationMsg { color: #7fd88f; margin-top: 10px; text-align: center; }
+
+/* background */
+body {
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #f3dfc5;
+
+    background:
+        linear-gradient(
+            rgba(10, 7, 5, 0.68),
+            rgba(10, 7, 5, 0.84)
+        ),
+        url("assets/shop-pov.png") center / cover fixed no-repeat;
+
+    overflow-x: hidden;
+}
+
+
