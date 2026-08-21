@@ -287,6 +287,11 @@ body {
         box-shadow 0.25s ease;
 }
 
+.table-card.selected {
+    border-color: #8b5e3c;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
 /* TABLE NUMBER */
 
