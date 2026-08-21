@@ -205,3 +205,38 @@ body.fade-out {
 
     box-shadow: 0 0 18px rgba(211, 146, 62, 0.25);
 }
+
+/* =========================
+   DINE IN HOTSPOT
+========================= */
+
+.dinein-hotspot {
+  position: absolute;
+
+  /* Center dining table ke upar */
+  left: 27%;
+  top: 55%;
+ background-color: rgba(230, 180, 100, 0.9);
+  color: #1a1410;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0;
+  animation: revealHotspot 0.8s ease-out forwards;
+  animation-delay: 3.2s; /* dono images crossfade khatam hone ke baad aayega */
+  z-index: 5;
+}
+
+.dinein-hotspot:hover {
+    background: #c4863b;
+
+    border-color: #c4863b;
+
+    color: #1b1008;
+
+    transform: translateX(-3px);
+
+    box-shadow: 0 0 18px rgba(211, 146, 62, 0.25);
+}

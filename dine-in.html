@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dine In — Coffee House</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Remix Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="dine-in.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <a href="landing.html" class="logo">
+            <i class="ri-cup-line"></i>
+            COFFEE HOUSE
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="landing.html">Home</a>
+            </li>
+
+            <li>
+                <a href="menu.html">Menu</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= BACK BUTTON ================= -->
+
+    <a href="shop-interior.html" class="back-btn">
+        <i class="ri-arrow-left-line"></i>
+        Back to Café
+    </a>
+
+
+    <!-- ================= PAGE ================= -->
+
+    <main class="dine-page">
+
+        <section class="dine-card">
+
+            <!-- Header -->
+
+            <div class="page-header">
+
+                <span class="page-label">
+                    <i class="ri-restaurant-2-line"></i>
+                    DINE IN
+                </span>
+
+                <h1>Choose Your Table</h1>
+
+                <p>
+                    Pick a table and enjoy your coffee house experience.
+                </p>
+
+            </div>
+
+
+            <!-- ================= TABLE AREA ================= -->
+
+            <section class="table-area">
+
+                <div class="table-grid">
+
+                    <!-- TABLE 01 -->
+
+                    <button class="table-card" data-table="Table 01">
+
+                        <span class="table-number">
+                            01
+                        </span>
+
+                        <i class="ri-restaurant-2-line"></i>
+
+                        <strong>Table 01</strong>
+
+                        <small>
+                            2 Seats
+                        </small>
+
+                    </button>
+
+
+                    <!-- TABLE 02 -->
+
+                    <button class="table-card" data-table="Table 02">
+
+                        <span class="table-number">
+                            02
+                        </span>
+
+                        <i class="ri-restaurant-2-line"></i>
+
+                        <strong>Table 02</strong>
+
+                        <small>
+                            2 Seats
+                        </small>
+
+                    </button>
+
+
+                    <!-- TABLE 03 -->
+
+                    <button class="table-card" data-table="Table 03">
+
+                        <span class="table-number">
+                            03
+                        </span>
+
+                        <i class="ri-restaurant-2-line"></i>
+
+                        <strong>Table 03</strong>
+
+                        <small>
+                            4 Seats
+                        </small>
+
+                    </button>
+
+
+                    <!-- TABLE 04 -->
+
+                    <button class="table-card" data-table="Table 04">
+
+                        <span class="table-number">
+                            04
+                        </span>
+
+                        <i class="ri-restaurant-2-line"></i>
+
+                        <strong>Table 04</strong>
+
+                        <small>
+                            4 Seats
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SELECTED TABLE ================= -->
+
+            <div class="selection-box">
+
+                <span>
+                    Selected Table
+                </span>
+
+                <strong id="selectedTable">
+                    None
+                </strong>
+
+            </div>
+
+
+            <!-- ================= ACTION ================= -->
+
+            <button
+                id="continueBtn"
+                class="continue-btn"
+                type="button"
+                disabled
+            >
+
+                Continue
+
+                <i class="ri-arrow-right-line"></i>
+
+            </button>
+
+
+            <p id="tableMessage" class="table-message"></p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            Your coffee. Your way.
+        </p>
+
+    </footer>
+
+
+    <script src="dine-in.js"></script>
+
+</body>
+
+</html>
