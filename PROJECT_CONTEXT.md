@@ -7,8 +7,8 @@ Frontend-only portfolio project. No backend, no build tools, no frameworks — p
 
 ## File Structure
 coffee-house/
-├── landing.html # Entry point — drone-zoom hero, "Enter Shop" / "Urgent Order"
-├── style.css # Landing page styles
+├── index.html # Entry point — drone-zoom hero, "Enter Shop" / "Urgent Order"
+├── style.css # index page styles
 ├── shop-interior.html # Drone → POV crossfade, links to Coffee Builder
 ├── interior-style.css # Shop interior styles
 ├── index.html # Core ordering system

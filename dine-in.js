@@ -1,9 +1,14 @@
+
 // ================= DINE IN TABLE SELECTION =================
 
 const tables = document.querySelectorAll(".table-card");
 const selectedTableText = document.getElementById("selectedTable");
 const continueBtn = document.getElementById("continueBtn");
 const tableMessage = document.getElementById("tableMessage");
+
+const orderChoice = document.getElementById("orderChoice");
+const coffeeBtn = document.getElementById("coffeeBtn");
+const pastryBtn = document.getElementById("pastryBtn");
 
 let selectedTable = null;
 
@@ -14,7 +19,7 @@ tables.forEach(table => {
 
     table.addEventListener("click", () => {
 
-        // Remove selection from all tables
+        // Remove previous selection
         tables.forEach(item => {
             item.classList.remove("selected");
         });
@@ -25,13 +30,16 @@ tables.forEach(table => {
         // Get table name
         selectedTable = table.dataset.table;
 
-        // Show selected table
+        // Display selected table
         selectedTableText.textContent = selectedTable;
 
-        // Enable Continue button
+        // Enable Continue
         continueBtn.disabled = false;
 
-        // Clear previous message
+        // Hide order options if user changes table
+        orderChoice.classList.remove("show");
+
+        // Clear message
         tableMessage.textContent = "";
 
     });
@@ -44,16 +52,54 @@ tables.forEach(table => {
 continueBtn.addEventListener("click", () => {
 
     if (!selectedTable) {
-        tableMessage.textContent = "Please select a table first.";
+
+        tableMessage.textContent =
+            "Please select a table first.";
+
         return;
     }
+
 
     // Save selected table
     localStorage.setItem("dineInTable", selectedTable);
 
-    tableMessage.textContent =
-        `${selectedTable} selected successfully!`;
 
-    console.log("Dine-in table:", selectedTable);
+    // Show order options
+    orderChoice.classList.add("show");
+
+
+    // Update message
+    tableMessage.textContent =
+        `${selectedTable} selected. What would you like to order?`;
+
+});
+
+
+// ================= COFFEE =================
+
+coffeeBtn.addEventListener("click", () => {
+
+    // Make sure table is saved
+    if (selectedTable) {
+        localStorage.setItem("dineInTable", selectedTable);
+    }
+
+    // Open Coffee Builder
+    window.location.href = "coffee-builder.html";
+
+});
+
+
+// ================= PASTRY =================
+
+pastryBtn.addEventListener("click", () => {
+
+    // Make sure table is saved
+    if (selectedTable) {
+        localStorage.setItem("dineInTable", selectedTable);
+    }
+
+    // Open Pastry Counter
+    window.location.href = "pastry-counter.html";
 
 });

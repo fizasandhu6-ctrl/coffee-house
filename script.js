@@ -65,7 +65,7 @@ function updateLivePrice() {
   livePriceDisplay.textContent = `Rs. ${price}`;
 }
 
-// ===== OPTION SELECTION (with "selected" highlight) =====
+// ===== OPTION SELECTION  =====
 optionButtons.forEach(button => {
   button.addEventListener('click', () => {
     const category = button.dataset.category;
@@ -263,17 +263,17 @@ teamItems.forEach(item => {
   });
 
   item.addEventListener('mousemove', (e) => {
-    // preview box ko cursor ke position pe move karo
-    cursorPreview.style.left = `${e.clientX + 20}px`; // thoda offset, taake cursor ke neeche na chhupe
+   
+    cursorPreview.style.left = `${e.clientX + 20}px`; 
     cursorPreview.style.top = `${e.clientY - 100}px`;
   });
 
-  // ===== CLICK - DETAIL MODAL KHOLO =====
+  // ===== CLICK - DETAIL MODAL  =====
 item.addEventListener('click', () => {
   document.getElementById('modalImg').src = item.dataset.image;
   document.getElementById('modalName').textContent = item.textContent.trim();
   document.getElementById('modalRole').textContent = item.dataset.role;
-  document.getElementById('modalBio').textContent = item.dataset.bio; // NAYA
+  document.getElementById('modalBio').textContent = item.dataset.bio; 
   document.getElementById('detailModal').classList.add('open');
  });
 });
@@ -289,7 +289,6 @@ if (closeModalBtn) {
 // ===== CARD ENTRANCE ANIMATIONS =====
 const allCards = document.querySelectorAll('.note-card');
 
-// Pehla card - page load pe, 0.3s delay ke saath
 if (allCards[0]) {
   window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
@@ -298,16 +297,16 @@ if (allCards[0]) {
   });
 }
 
-// Baaki cards - scroll pe trigger (Intersection Observer)
+
 const cardObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('placed');
     }
   });
-}, { threshold: 0.2 }); // 20% visible hone par trigger
+}, { threshold: 0.2 }); 
 
-// Pehle card ko chhod kar baaki sab observe karo
+
 allCards.forEach((card, index) => {
   if (index !== 0) {
     cardObserver.observe(card);
@@ -730,152 +729,6 @@ tabButtons.forEach((button) => {
 let cart = JSON.parse(localStorage.getItem("coffeeHouseCart")) || [];
 
 
-/* =====================================================
-   UPDATE CART COUNT
-===================================================== */
-
-// function updateCartCount() {
-
-//     const cartCount = document.getElementById("cartCount");
-
-//     if (!cartCount) return;
-
-
-//     /*
-//        Total quantity calculate kar rahe hain.
-//        Example:
-//        Latte x2
-//        Mocha x1
-
-//        Count = 3
-//     */
-
-//     const totalItems = cart.reduce(
-//         (total, item) => total + item.quantity,
-//         0
-//     );
-
-
-//     cartCount.textContent = totalItems;
-
-// }
-
-
-
-// /* =====================================================
-//    ADD ITEM TO CART
-// ===================================================== */
-
-// const addButtons = document.querySelectorAll(
-//     ".add-btn, .small-add-btn"
-// );
-
-
-// addButtons.forEach((button) => {
-
-//     button.addEventListener("click", () => {
-
-//         const name = button.dataset.name;
-
-//         const price = Number(button.dataset.price);
-
-
-//         /* Check if item already exists */
-
-//         const existingItem = cart.find(
-//             item => item.name === name
-//         );
-
-
-//         if (existingItem) {
-
-//             existingItem.quantity += 1;
-
-//         } else {
-
-//             cart.push({
-//                 name: name,
-//                 price: price,
-//                 quantity: 1
-//             });
-
-//         }
-
-
-//         /* Save cart */
-
-//         localStorage.setItem(
-//             "coffeeHouseCart",
-//             JSON.stringify(cart)
-//         );
-
-
-//         /* Update count */
-
-//         updateCartCount();
-
-
-//         /* Button feedback */
-
-//         const originalText = button.textContent;
-
-//         button.textContent = "✓ Added";
-
-//         button.classList.add("added");
-
-
-//         setTimeout(() => {
-
-//             button.textContent = originalText;
-
-//             button.classList.remove("added");
-
-//         }, 900);
-
-//     });
-
-// });
-
-
-
-// /* =====================================================
-//    MY ORDER BUTTON
-// ===================================================== */
-
-// const orderButton = document.getElementById("orderBtn");
-
-
-// if (orderButton) {
-
-//     orderButton.addEventListener("click", () => {
-
-//         /*
-//            Abhi actual order page create nahi ki.
-//            Filhal user ko order page par bhejne
-//            ke liye ye line use kar sakti ho.
-//         */
-
-//         if (cart.length > 0) {
-
-//             window.location.href = "my-order.html";
-
-//         } else {
-
-//             alert("Your order is empty. Add something first!");
-
-//         }
-
-//     });
-
-// }
-
-
-
-// /* =====================================================
-//    INITIAL CART COUNT
-// ===================================================== */
-
-// updateCartCount();
 
 
 // =========================================================

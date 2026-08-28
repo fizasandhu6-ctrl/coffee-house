@@ -41,7 +41,7 @@ Instead of a traditional "add to cart" flow, this project reimagines coffee orde
 ```bash
    git clone https://github.com/fizasandhu6-ctrl/coffee-house.git
 ```
-2. Open `landing.html` in your browser — no build tools or dependencies required
+2. Open `index.html` in your browser — no build tools or dependencies required
 
 ##  Roadmap
 

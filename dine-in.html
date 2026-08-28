@@ -7,7 +7,6 @@
 
     <title>Dine In — Coffee House</title>
 
-    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet"
@@ -28,7 +27,7 @@
 
     <nav class="navbar">
 
-        <a href="landing.html" class="logo">
+        <a href="index.html" class="logo">
             <i class="ri-cup-line"></i>
             COFFEE HOUSE
         </a>
@@ -36,7 +35,7 @@
         <ul class="nav-links">
 
             <li>
-                <a href="landing.html">Home</a>
+                <a href="index.html">Home</a>
             </li>
 
             <li>
@@ -207,9 +206,76 @@
 
             <p id="tableMessage" class="table-message"></p>
 
+                    <!-- ================= ORDER CHOICE ================= -->
+
+<section id="orderChoice" class="order-choice">
+
+    <div class="order-choice-header">
+
+        <span class="page-label">
+            <i class="ri-cup-line"></i>
+            ORDER
+        </span>
+
+        <h2>What Would You Like?</h2>
+
+        <p>
+            Choose something to enjoy at your table.
+        </p>
+
+    </div>
+
+
+    <div class="order-options">
+
+        <!-- COFFEE -->
+
+        <button
+            type="button"
+            class="order-option coffee-option"
+            id="coffeeBtn"
+        >
+
+            <i class="ri-cup-line"></i>
+
+            <strong>Coffee</strong>
+
+            <small>
+                Build your perfect coffee
+            </small>
+
+            <i class="ri-arrow-right-line option-arrow"></i>
+
+        </button>
+
+
+        <!-- PASTRY -->
+
+        <button
+            type="button"
+            class="order-option pastry-option"
+            id="pastryBtn"
+        >
+
+            <i class="ri-cake-3-line"></i>
+
+            <strong>Pastry</strong>
+
+            <small>
+                Choose something sweet
+            </small>
+
+            <i class="ri-arrow-right-line option-arrow"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
         </section>
 
-    </main>
+    </main> 
 
 
     <!-- ================= FOOTER ================= -->

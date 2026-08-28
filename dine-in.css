@@ -479,6 +479,181 @@ body {
 
 
 /* =====================================================
+   ORDER CHOICE
+===================================================== */
+
+.order-choice {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(211, 161, 82, 0.25);
+}
+
+.order-choice.show {
+    display: block;
+}
+
+
+/* =====================================================
+   ORDER CHOICE HEADER
+===================================================== */
+
+.order-choice-header {
+    text-align: center;
+
+    margin-bottom: 22px;
+}
+
+.order-choice-header h2 {
+    margin-top: 8px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 28px;
+
+    color: #f4e3c7;
+}
+
+.order-choice-header p {
+    margin-top: 7px;
+
+    color: #bda98e;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   ORDER OPTIONS
+===================================================== */
+
+.order-options {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+/* =====================================================
+   ORDER OPTION CARD
+===================================================== */
+
+.order-option {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 145px;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(211, 161, 82, 0.35);
+
+    background: rgba(54, 39, 27, 0.9);
+
+    color: #ead8bd;
+
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    text-align: left;
+
+    gap: 5px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* ICON */
+
+.order-option > i:first-child {
+    margin-bottom: 8px;
+
+    font-size: 30px;
+
+    color: #dba653;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* TITLE */
+
+.order-option strong {
+    font-size: 17px;
+
+    color: #f3e4cc;
+}
+
+
+/* DESCRIPTION */
+
+.order-option small {
+    color: #a99781;
+
+    font-size: 11px;
+}
+
+
+/* ARROW */
+
+.order-option .option-arrow {
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    font-size: 18px;
+
+    color: #dba653;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.order-option:hover {
+    transform: translateY(-5px);
+
+    border-color: #dba653;
+
+    background: rgba(68, 47, 30, 0.95);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.order-option:hover > i:first-child {
+    transform: scale(1.1);
+}
+
+
+/* =====================================================
    FOOTER
 ===================================================== */
 
@@ -561,4 +736,8 @@ body {
     .page-header h1 {
         font-size: 27px;
     }
+
+    .order-options {
+    grid-template-columns: 1fr;
+}
 }

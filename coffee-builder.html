@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body { background-color: #1a1410; margin: 0; }
+  </style>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+    <div class="logo">
+      <i class="ri-cup-line"></i> COFFEE HOUSE
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html"> Menu</a></li>
+      <!-- <li class="menu.html">Menu</li>  -->
+     <li><a href="about.html">About</a></li>
+     <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="back-btn">
+  <a href="shop-interior.html"><i class="ri-arrow-left-line"></i> Back</a></div>
+
+  <div class="builder">
+
+        <h1>Build Your Coffee</h1>
+
+        <!-- live pricing -->
+    <div class="option-group">
+  <h3><i class="ri-price-tag-3-line"></i>Live Price: <span id="livePrice">Rs. 0</span></h3>
+</div>
+
+
+    <!-- Coffee Type -->
+    <div class="option-group">
+      <h3> <i class="ri-cup-line"></i> Coffee Type</h3>
+      <button class="option" data-category="type" data-value="Espresso">Espresso</button>
+      <button class="option" data-category="type" data-value="Latte">Latte</button>
+      <button class="option" data-category="type" data-value="Cappuccino">Cappuccino</button>
+    </div>
+
+    <!-- Milk Type -->
+    <div class="option-group">
+      <h3><i class="ri-drop-line"></i> Milk</h3>
+      <button class="option" data-category="milk" data-value="Full Cream">Full Cream</button>
+      <button class="option" data-category="milk" data-value="Oat">Oat</button>
+      <button class="option" data-category="milk" data-value="None">None</button>
+    </div>
+
+    <!-- Sugar Level -->
+    <div class="option-group">
+      <h3><i class="ri-archive-line"></i> Sugar</h3>
+      <button class="option" data-category="sugar" data-value="Low">Low</button>
+      <button class="option" data-category="sugar" data-value="Medium">Medium</button>
+      <button class="option" data-category="sugar" data-value="High">High</button>
+      <button class="option" data-category="sugar" data-value="None">None</button>
+    </div>
+
+  <!-- <button id="addBtn">Add to Order</button> -->
+  
+  <button id="addBtn"><i class="ri-add-line"></i>Add to Order</button>
+  <button id="resetBtn" disabled><i class="ri-refresh-line"></i>Reset Order</button>
+
+<h2><i class="ri-file-list-3-line"></i>Your Order</h2>
+<ul id="orderList"></ul>
+<h3><i class="ri-wallet-3-line"></i> Total: Rs. <span id="totalPrice">0</span></h3>
+
+<button id="placeOrderBtn" disabled><i class="ri-shopping-bag-3-line"></i>Place Order</button>
+<p id="confirmationMsg"></p>
+
+  </div>
+    
+</body>
+<script src="script.js"></script>
+</html>
