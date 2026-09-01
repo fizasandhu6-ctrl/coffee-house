@@ -240,3 +240,86 @@ body.fade-out {
 
     box-shadow: 0 0 18px rgba(211, 146, 62, 0.25);
 }
+
+
+/* =========================
+   RESPONSIVE INTERIOR
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 18px 25px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .builder-hotspot {
+        right: 5%;
+        bottom: 10%;
+    }
+
+    .pastry-hotspot {
+        left: 58%;
+        bottom: 43%;
+    }
+
+    .dinein-hotspot {
+        left: 24%;
+        top: 53%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 18px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .exit-btn {
+        top: 15px;
+        left: 15px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .builder-hotspot,
+    .pastry-hotspot,
+    .dinein-hotspot {
+        padding: 9px 12px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* Coffee Builder */
+    .builder-hotspot {
+        right: 4%;
+        bottom: 8%;
+    }
+
+    /* Pastry Counter */
+    .pastry-hotspot {
+        left: 58%;
+        bottom: 40%;
+    }
+
+    /* Dine In */
+    .dinein-hotspot {
+        left: 20%;
+        top: 52%;
+    }
+}
