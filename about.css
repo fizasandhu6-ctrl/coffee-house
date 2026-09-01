@@ -358,3 +358,283 @@ body {
 .team-section{
   background-color: #1a120c;
 }
+
+
+/* =====================================================
+   RESPONSIVE DESIGN — ABOUT PAGE
+===================================================== */
+
+/* ===== TABLET ===== */
+
+@media (max-width: 768px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    padding: 18px 25px;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links li {
+    font-size: 14px;
+  }
+
+
+  /* ---------- ABOUT CONTENT ---------- */
+
+  .about-page {
+    width: 100%;
+    padding: 50px 20px;
+  }
+
+  .note-card {
+    padding: 35px;
+    margin-bottom: 25vh;
+  }
+
+  .note-card h2 {
+    font-size: 30px;
+  }
+
+  .note-card h3 {
+    font-size: 17px;
+  }
+
+  .note-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
+  /* ---------- TEAM ---------- */
+
+  .team-section {
+    padding: 50px 25px;
+  }
+
+  .team-section > h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .team-list {
+    padding: 0;
+  }
+
+  .team-item {
+    font-size: 34px;
+    padding: 20px 0;
+  }
+
+  .team-item h2 {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+
+  /* ---------- MODAL ---------- */
+
+  .modal-content {
+    width: calc(100% - 40px);
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-content img {
+    width: 220px;
+    height: 270px;
+  }
+
+  .close-modal {
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+  }
+
+
+  /* ---------- CURSOR PREVIEW ---------- */
+
+  .cursor-preview {
+    display: none;
+  }
+
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 480px) {
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    padding: 16px 15px;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 10px 16px;
+  }
+
+  .nav-links li {
+    font-size: 13px;
+  }
+
+
+  /* ---------- ABOUT CONTENT ---------- */
+
+  .about-page {
+    padding: 35px 14px;
+  }
+
+  .note-card {
+    padding: 25px 20px;
+    margin-bottom: 20vh;
+    border-radius: 5px;
+  }
+
+  .note-card h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .note-card h2 {
+    font-size: 25px;
+    line-height: 1.3;
+  }
+
+  .note-card h3 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .note-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
+  /* ---------- TEAM ---------- */
+
+  .team-section {
+    padding: 40px 18px;
+  }
+
+  .team-section > h2 {
+    font-size: 27px;
+    margin-bottom: 25px;
+  }
+
+  .team-list {
+    padding: 0;
+  }
+
+  .team-item {
+    font-size: 27px;
+    padding: 18px 0;
+    line-height: 1.2;
+  }
+
+  .team-item:hover {
+    padding-left: 0;
+  }
+
+  .team-item h2 {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+
+  /* ---------- MODAL ---------- */
+
+  .modal-content {
+    width: calc(100% - 30px);
+    max-height: 85vh;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .modal-content img {
+    width: 180px;
+    height: 220px;
+    margin-bottom: 15px;
+  }
+
+  .close-modal {
+    top: 12px;
+    right: 18px;
+    font-size: 28px;
+  }
+
+
+  /* ---------- SCROLL HINT ---------- */
+
+  .scroll-hint {
+    bottom: 15px;
+    font-size: 10px;
+  }
+
+}
+
+
+/* ===== VERY SMALL PHONES ===== */
+
+@media (max-width: 360px) {
+
+  .nav-links {
+    gap: 8px 12px;
+  }
+
+  .nav-links li {
+    font-size: 12px;
+  }
+
+  .about-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .note-card {
+    padding: 22px 17px;
+  }
+
+  .note-card h1 {
+    font-size: 25px;
+  }
+
+  .note-card h2 {
+    font-size: 22px;
+  }
+
+  .note-card p {
+    font-size: 13px;
+  }
+
+  .team-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .team-item {
+    font-size: 24px;
+  }
+
+}
