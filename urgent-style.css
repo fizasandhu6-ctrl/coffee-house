@@ -1,195 +1,676 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-
-body {
-  background-color: #1a1410;
-  min-height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  color: #f3dfc5;
+
+  background:
+    linear-gradient(
+      rgba(10, 7, 5, 0.68),
+      rgba(10, 7, 5, 0.84)
+    ),
+    url("assets/shop-pov.png") center / cover fixed no-repeat;
+
+  background-color: #1a1410;
+
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
 .navbar {
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 20px 50px;
 }
 
-.logo { color: #f0d9b5; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.logo {
+  color: #f0d9b5;
+
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+.logo i {
+  font-size: 23px;
+}
 
 .back-btn {
   color: #d8c8b8;
+
   text-decoration: none;
+
   display: flex;
   align-items: center;
   gap: 6px;
+
+  font-size: 14px;
+
+  transition: color 0.2s ease;
 }
 
-.back-btn:hover { color: #e6b464; }
+.back-btn:hover {
+  color: #e6b464;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
 
 .urgent-container {
+  width: 100%;
   max-width: 700px;
+
   margin: 0 auto;
+
   padding: 20px 20px 80px;
 }
 
+
+/* =====================================================
+   HEADING
+===================================================== */
+
 .urgent-container h1 {
   color: #f0d9b5;
+
   font-size: 32px;
+
+  line-height: 1.2;
+
+  margin-bottom: 6px;
 }
 
 .subtitle {
   color: #a89a8c;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
   margin-bottom: 30px;
 }
 
+
+/* =====================================================
+   MENU GRID
+===================================================== */
+
 .menu-grid {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(140px, 1fr)
+  );
+
   gap: 16px;
+
   margin-bottom: 40px;
 }
 
+
+/* =====================================================
+   MENU CARD
+===================================================== */
+
 .menu-card {
   background-color: #2a2118;
+
   border: 1px solid rgba(230, 180, 100, 0.2);
+
   border-radius: 10px;
+
   padding: 20px;
+
   text-align: center;
+
+  min-width: 0;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.menu-card i { font-size: 28px; color: #e6b464; }
+.menu-card:hover {
+  transform: translateY(-3px);
 
-.menu-card h3 { color: #f0d9b5; font-size: 15px; margin: 10px 0 4px; }
+  border-color: rgba(230, 180, 100, 0.45);
+}
 
-.menu-card p { color: #a89a8c; font-size: 14px; margin-bottom: 12px; }
+.menu-card i {
+  font-size: 28px;
 
-/* .add-item-btn {
-  background-color: #e6b464;
-  color: #1a1410;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 13px;
-  box-shadow:
-        0 0 20px rgba(218, 151, 63, 0.32);
+  color: #e6b464;
+}
 
-    transform: translateY(-2px);
-} */
+.menu-card h3 {
+  color: #f0d9b5;
+
+  font-size: 15px;
+
+  margin: 10px 0 4px;
+
+  line-height: 1.3;
+}
+
+.menu-card p {
+  color: #a89a8c;
+
+  font-size: 14px;
+
+  margin-bottom: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   ADD ITEM BUTTON
+===================================================== */
 
 .add-item-btn {
-    position: relative;
-    z-index: 3;
+  position: relative;
+  z-index: 3;
 
-    width: 100%;
+  width: 100%;
 
-    padding: 12px 18px;
+  padding: 12px 18px;
 
-    border: 1px solid #bd7d35;
+  border: 1px solid #bd7d35;
 
-    border-radius: 9px;
+  border-radius: 9px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #69411d,
-            #976027
-        );
+  background:
+    linear-gradient(
+      135deg,
+      #69411d,
+      #976027
+    );
 
-    color: #ffe5b8;
+  color: #ffe5b8;
 
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 
-    font-size: 14px;
+  font-size: 14px;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: all 0.25s ease;
+  transition:
+    all 0.25s ease;
 }
 
 .add-item-btn:hover {
-    background: #d09240;
+  background: #d09240;
 
-    color: #1b1008;
+  color: #1b1008;
 
-    border-color: #e0a65a;
+  border-color: #e0a65a;
 
-    box-shadow:
-        0 0 20px rgba(218, 151, 63, 0.32);
+  box-shadow:
+    0 0 20px rgba(218, 151, 63, 0.32);
 
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .add-item-btn:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
+
+
+/* =====================================================
+   CART SUMMARY
+===================================================== */
 
 .cart-summary {
+  width: 100%;
+
   background-color: #2a2118;
+
   border-radius: 12px;
+
   padding: 24px;
+
+  border: 1px solid rgba(230, 180, 100, 0.15);
+
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.35);
 }
 
-.cart-summary h2 { color: #f0d9b5; margin-bottom: 16px; }
+.cart-summary h2 {
+  color: #f0d9b5;
 
-#urgentOrderList { list-style: none; margin-bottom: 16px; }
+  font-size: 20px;
+
+  margin-bottom: 16px;
+
+  line-height: 1.3;
+}
+
+
+/* =====================================================
+   ORDER LIST
+===================================================== */
+
+#urgentOrderList {
+  list-style: none;
+
+  margin-bottom: 16px;
+
+  padding: 0;
+}
 
 #urgentOrderList li {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
+  gap: 12px;
+
   padding: 10px;
-  background-color: rgba(255,255,255,0.03);
+
+  background-color: rgba(255, 255, 255, 0.03);
+
   border-radius: 6px;
+
   margin-bottom: 8px;
+
   color: #d8c8b8;
+
   font-size: 14px;
+
+  line-height: 1.4;
+
+  overflow-wrap: break-word;
 }
+
+
+/* =====================================================
+   REMOVE ITEM
+===================================================== */
 
 .remove-item-btn {
+  flex-shrink: 0;
+
   background: none;
+
   border: none;
+
   color: #a89a8c;
+
   cursor: pointer;
+
+  font-size: 18px;
+
+  padding: 4px;
+
+  transition: color 0.2s ease;
 }
 
-.empty-state { color: #a89a8c; font-style: italic; text-align: center; padding: 20px; }
+.remove-item-btn:hover {
+  color: #e6b464;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-state {
+  color: #a89a8c;
+
+  font-style: italic;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+
+/* =====================================================
+   TOTAL
+===================================================== */
+
+.cart-summary h3 {
+  color: #f0d9b5;
+
+  font-size: 16px;
+
+  margin-top: 8px;
+}
+
+#urgentTotal {
+  color: #e6b464;
+}
+
+
+/* =====================================================
+   PLACE ORDER
+===================================================== */
 
 #urgentPlaceOrderBtn {
   width: 100%;
+
   background-color: #e6b464;
+
   color: #1a1410;
+
   border: none;
+
   padding: 14px;
+
   border-radius: 8px;
+
   font-weight: 700;
+
+  font-size: 15px;
+
   cursor: pointer;
+
   margin-top: 10px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
 }
 
-#urgentPlaceOrderBtn:disabled { opacity: 0.3; cursor: not-allowed; }
+#urgentPlaceOrderBtn:hover {
+  background-color: #f0c674;
+}
 
-#urgentConfirmationMsg { color: #7fd88f; margin-top: 10px; text-align: center; }
+#urgentPlaceOrderBtn:active {
+  transform: scale(0.98);
+}
 
-/* background */
-body {
-    min-height: 100vh;
+#urgentPlaceOrderBtn:disabled {
+  opacity: 0.3;
 
-    font-family: 'Poppins', sans-serif;
-
-    color: #f3dfc5;
-
-    background:
-        linear-gradient(
-            rgba(10, 7, 5, 0.68),
-            rgba(10, 7, 5, 0.84)
-        ),
-        url("assets/shop-pov.png") center / cover fixed no-repeat;
-
-    overflow-x: hidden;
+  cursor: not-allowed;
 }
 
 
+/* =====================================================
+   CONFIRMATION
+===================================================== */
+
+#urgentConfirmationMsg {
+  color: #7fd88f;
+
+  margin-top: 10px;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 18px 25px;
+  }
+
+  .urgent-container {
+    max-width: 650px;
+
+    padding:
+      20px 25px 60px;
+  }
+
+  .urgent-container h1 {
+    font-size: 29px;
+  }
+
+  .menu-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .menu-card {
+    padding: 18px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  body {
+    background-attachment: scroll;
+  }
+
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    padding: 16px 15px;
+
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .logo i {
+    font-size: 21px;
+  }
+
+  .back-btn {
+    font-size: 13px;
+  }
+
+
+  /* ---------- CONTAINER ---------- */
+
+  .urgent-container {
+    width: 100%;
+
+    padding:
+      20px 14px 45px;
+  }
+
+
+  /* ---------- HEADING ---------- */
+
+  .urgent-container h1 {
+    font-size: 25px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+
+    margin-bottom: 24px;
+  }
+
+
+  /* ---------- MENU GRID ---------- */
+
+  .menu-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+  }
+
+
+  /* ---------- MENU CARD ---------- */
+
+  .menu-card {
+    padding: 15px 10px;
+
+    border-radius: 9px;
+  }
+
+  .menu-card i {
+    font-size: 25px;
+  }
+
+  .menu-card h3 {
+    font-size: 13px;
+
+    margin-top: 8px;
+  }
+
+  .menu-card p {
+    font-size: 12px;
+
+    margin-bottom: 10px;
+  }
+
+
+  /* ---------- ADD BUTTON ---------- */
+
+  .add-item-btn {
+    padding: 10px 8px;
+
+    font-size: 12px;
+
+    border-radius: 8px;
+  }
+
+
+  /* ---------- CART ---------- */
+
+  .cart-summary {
+    padding: 18px 14px;
+
+    border-radius: 10px;
+  }
+
+  .cart-summary h2 {
+    font-size: 18px;
+
+    margin-bottom: 14px;
+  }
+
+
+  /* ---------- ORDER ITEMS ---------- */
+
+  #urgentOrderList li {
+    padding: 10px 8px;
+
+    font-size: 12px;
+
+    gap: 8px;
+  }
+
+  .remove-item-btn {
+    font-size: 16px;
+  }
+
+
+  /* ---------- TOTAL ---------- */
+
+  .cart-summary h3 {
+    font-size: 15px;
+  }
+
+
+  /* ---------- PLACE ORDER ---------- */
+
+  #urgentPlaceOrderBtn {
+    padding: 13px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .navbar {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .back-btn {
+    font-size: 12px;
+  }
+
+  .urgent-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .urgent-container h1 {
+    font-size: 23px;
+  }
+
+  .menu-grid {
+    gap: 8px;
+  }
+
+  .menu-card {
+    padding: 13px 8px;
+  }
+
+  .menu-card h3 {
+    font-size: 12px;
+  }
+
+  .menu-card p {
+    font-size: 11px;
+  }
+
+  .add-item-btn {
+    font-size: 11px;
+    padding: 9px 5px;
+  }
+
+  .cart-summary {
+    padding: 16px 12px;
+  }
+}
