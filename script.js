@@ -231,18 +231,18 @@ internalLinks.forEach(link => {
 // ===== SCROLL HINT FADE OUT =====
 const scrollHint = document.querySelector(".scroll-hint");
 
-window.addEventListener("scroll", () => {
-
+if (scrollHint) {
+  window.addEventListener("scroll", () => {
     const scrollPosition = window.innerHeight + window.scrollY;
     const pageHeight = document.documentElement.scrollHeight;
 
     if (scrollPosition >= pageHeight - 50) {
-        scrollHint.classList.add("hidden");
+      scrollHint.classList.add("hidden");
     } else {
-        scrollHint.classList.remove("hidden");
+      scrollHint.classList.remove("hidden");
     }
-
-});
+  });
+}
 
 
 
