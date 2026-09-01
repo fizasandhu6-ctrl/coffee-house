@@ -1,83 +1,34 @@
-/* CSS Reset */
+/* =====================================================
+   CSS RESET
+===================================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
-  
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-
-/* ===== NAVBAR ===== */
- .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.navbar .logo {
-  color: #f0d9b5;
-  font-weight: 700;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.navbar .nav-links  {
-  text-decoration: none;
-  display: flex;
-  list-style: none;
-  gap: 32px;
-}
-
-.navbar .nav-links li {
-  color: #d8c8b8;
-  cursor: pointer;
-}
-
-.navbar .nav-links li a {
-  text-decoration: none;
-  color: #d8c8b8;
-  cursor: pointer;
-}
-
-.navbar .nav-links li.active {
-  color: #e6b464;
-} 
-
-
-
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-/* ===== BASE PAGE SETUP ===== */
 body {
   margin: 0;
-  padding: 40px 20px;
   min-height: 100vh;
+  padding: 110px 20px 40px;
+
   background-color: #1a1410;
   background-image: url('assets/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   font-family: 'Segoe UI', sans-serif;
+
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+
   opacity: 1;
   transition: opacity 0.5s ease;
 }
@@ -86,26 +37,159 @@ body.fade-out {
   opacity: 0;
 }
 
-/* ===== MAIN CARD CONTAINER ===== */
-.builder {
-  background-color: #2a2118;
-  border: 1px solid rgba(230, 180, 100, 0.3);
-  border-radius: 16px;
-  padding: 32px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 0 40px rgba(230, 180, 100, 0.08);
-  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
-  box-shadow : 0 0 40px rgba(230, 180, 100, 0.08), 0 8px 60px rgba(0, 0, 0, 0.7);
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 
-/* ===== HEADING ===== */
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  min-height: 80px;
+
+  padding: 20px 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 100;
+}
+
+.navbar .logo {
+  color: #f0d9b5;
+
+  font-weight: 700;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+.navbar .logo i {
+  font-size: 24px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+
+  gap: 32px;
+}
+
+.navbar .nav-links li a {
+  color: #d8c8b8;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  transition: color 0.2s ease;
+}
+
+.navbar .nav-links li a:hover {
+  color: #e6b464;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-btn {
+  align-self: flex-start;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #d8c8b8;
+
+  font-size: 14px;
+
+  margin-bottom: 16px;
+
+  transition: color 0.2s ease;
+
+  z-index: 10;
+}
+
+.back-btn:hover {
+  color: #e6b464;
+}
+
+
+/* =====================================================
+   MAIN BUILDER CARD
+===================================================== */
+
+.builder {
+  width: 100%;
+  max-width: 500px;
+
+  background-color: #2a2118;
+
+  border: 1px solid rgba(230, 180, 100, 0.3);
+  border-radius: 16px;
+
+  padding: 32px;
+
+  box-shadow:
+    0 0 40px rgba(230, 180, 100, 0.08),
+    0 8px 60px rgba(0, 0, 0, 0.7);
+
+  backdrop-filter: blur(4px);
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
 h1 {
-  color: #f0d9b5; /* warm cream/gold text */
+  color: #f0d9b5;
+
   font-size: 28px;
+
   margin-bottom: 20px;
+
+  line-height: 1.2;
+}
+
+h2 {
+  color: #f0d9b5;
+
+  font-size: 20px;
+
+  border-top: 1px solid rgba(230, 180, 100, 0.2);
+
+  padding-top: 20px;
+
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  line-height: 1.3;
+}
+
+h3 {
+  color: #f0d9b5;
+
+  font-size: 16px;
+
+  line-height: 1.4;
 }
 
 .ri-cup-line {
@@ -113,64 +197,132 @@ h1 {
   color: #f0d9b5;
 }
 
-/* ===== OPTION GROUPS (Coffee Type, Milk, Sugar sections) ===== */
+
+/* =====================================================
+   OPTION GROUPS
+===================================================== */
+
 .option-group {
   margin-bottom: 24px;
 }
 
 .option-group h3 {
   color: #e6b464;
+
   font-size: 15px;
+
   margin-bottom: 10px;
+
   display: flex;
   align-items: center;
   gap: 8px;
+
+  flex-wrap: wrap;
 }
 
-/* ===== OPTION BUTTONS (Espresso, Latte, Oat, etc.) ===== */
+.option-group h3 i {
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   OPTION BUTTONS
+===================================================== */
+
 .option {
   background-color: transparent;
+
   border: 1px solid rgba(230, 180, 100, 0.4);
+
   color: #f0d9b5;
+
   padding: 8px 16px;
+
   margin-right: 8px;
   margin-bottom: 8px;
+
   border-radius: 8px;
+
   cursor: pointer;
+
   font-size: 14px;
-  transition: all 0.2s ease;
+
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .option:hover {
   background-color: rgba(230, 180, 100, 0.15);
 }
 
-/* ===== ACTION BUTTONS (Add to Order / Reset Order) ===== */
-#addBtn, #resetBtn {
+.option:active {
+  transform: scale(0.95);
+}
+
+.option.selected {
+  background-color: rgba(230, 180, 100, 0.25);
+  border-color: #e6b464;
+}
+
+
+/* =====================================================
+   LIVE PRICE
+===================================================== */
+
+#totalPrice,
+#livePrice {
+  color: #e6b464;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+#addBtn,
+#resetBtn {
+  min-height: 44px;
+
   padding: 12px 24px;
+
   border-radius: 8px;
+
   font-size: 15px;
   font-weight: 600;
+
   cursor: pointer;
+
   margin-right: 12px;
   margin-top: 8px;
   margin-bottom: 28px;
-  border: none;
-  transition: all 0.2s ease;
+
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease;
 }
 
 #addBtn {
   background-color: #e6b464;
   color: #1a1410;
+
+  border: none;
 }
 
 #addBtn:hover {
   background-color: #f0c674;
 }
 
+#addBtn:active {
+  transform: scale(0.96);
+}
+
 #resetBtn {
   background-color: transparent;
+
   border: 1px solid rgba(230, 180, 100, 0.4);
+
   color: #a89a8c;
 }
 
@@ -179,59 +331,83 @@ h1 {
   cursor: not-allowed;
 }
 
-/* ===== YOUR ORDER SECTION ===== */
-h2 {
-  color: #f0d9b5;
-  font-size: 20px;
-  border-top: 1px solid rgba(230, 180, 100, 0.2);
-  padding-top: 20px;
-  margin-top: 0;
-  margin-bottom: 16px;
-}
+
+/* =====================================================
+   ORDER LIST
+===================================================== */
 
 #orderList {
   list-style: none;
+
   padding: 0;
-  margin: 0 0 20px 0;
+
+  margin: 0 0 20px;
+
   min-height: 60px;
 }
 
 #orderList li {
   padding: 12px;
+
   margin-bottom: 8px;
+
   background-color: rgba(255, 255, 255, 0.03);
+
   border-radius: 8px;
+
   color: #d8c8b8;
+
   font-size: 14px;
-}
 
-h3 {
-  color: #f0d9b5;
-  font-size: 16px;
-}
+  line-height: 1.5;
 
-#totalPrice, #livePrice {
-  color: #e6b464;
+  overflow-wrap: break-word;
 }
-
 
 .empty-state {
   color: #a89a8c;
+
   font-style: italic;
+
   text-align: center;
+
   padding: 20px !important;
 }
 
+
+/* =====================================================
+   PLACE ORDER
+===================================================== */
+
 #placeOrderBtn {
+  width: auto;
+
   background-color: #e6b464;
   color: #1a1410;
+
   padding: 14px 28px;
+
   border: none;
   border-radius: 8px;
+
   font-size: 16px;
   font-weight: 700;
+
   cursor: pointer;
+
   margin-top: 12px;
+
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease;
+}
+
+#placeOrderBtn:hover {
+  background-color: #f0c674;
+}
+
+#placeOrderBtn:active {
+  transform: scale(0.96);
 }
 
 #placeOrderBtn:disabled {
@@ -241,19 +417,33 @@ h3 {
 
 #confirmationMsg {
   color: #7fd88f;
+
   font-weight: 600;
+
   margin-top: 10px;
+
+  line-height: 1.5;
 }
 
-/* ===== SPARKLE PARTICLES ===== */
+
+/* =====================================================
+   SPARKLE PARTICLES
+===================================================== */
+
 .sparkle {
   position: fixed;
+
   width: 6px;
   height: 6px;
+
   background-color: #f0c674;
+
   border-radius: 50%;
+
   pointer-events: none;
+
   z-index: 999;
+
   animation: sparkleFly 0.7s ease-out forwards;
 }
 
@@ -262,84 +452,243 @@ h3 {
     transform: translate(0, 0) scale(1);
     opacity: 1;
   }
+
   100% {
     transform: translate(var(--dx), var(--dy)) scale(0);
     opacity: 0;
   }
 }
 
-/* =========other buttons effect==== */
-.option {
-  transition: transform 0.15s ease, background-color 0.2s ease;
-}
 
-.option:active {
-  transform: scale(0.95); /* "press" feel */
-}
+/* =====================================================
+   TABLET
+===================================================== */
 
-.option.selected {
-  background-color: rgba(230, 180, 100, 0.25);
-  border-color: #e6b464;
-}
+@media (max-width: 768px) {
 
-#addBtn:active {
-  transform: scale(0.96);
-}
-
-/* ===== RESPONSIVE - TABLET & MOBILE ===== */
-@media (max-width: 600px) {
   body {
-    padding: 20px 12px;
-    align-items: flex-start;
+    padding: 105px 18px 35px;
+  }
+
+  .navbar {
+    padding: 18px 25px;
+  }
+
+  .navbar .nav-links {
+    gap: 20px;
+  }
+
+  .navbar .nav-links li a {
+    font-size: 14px;
   }
 
   .builder {
-    max-width: 100%;
-    padding: 20px;
-    border-radius: 12px;
+    max-width: 600px;
+    padding: 28px;
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .option {
-    padding: 7px 12px;
-    font-size: 13px;
-    margin-right: 6px;
-    margin-bottom: 6px;
+    padding: 8px 14px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 125px 12px 25px;
+
+    align-items: center;
+
+    background-position: center;
   }
 
-  #addBtn, #resetBtn {
-    padding: 10px 18px;
-    font-size: 14px;
-    display: inline-block;
-    margin-bottom: 10px;
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    min-height: auto;
+
+    padding: 16px 15px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 12px;
   }
+
+  .navbar .logo {
+    font-size: 16px;
+  }
+
+  .navbar .logo i {
+    font-size: 21px;
+  }
+
+  .navbar .nav-links {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+  }
+
+  .navbar .nav-links li a {
+    font-size: 13px;
+  }
+
+
+  /* ---------- BACK BUTTON ---------- */
+
+  .back-btn {
+    align-self: flex-start;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+  }
+
+
+  /* ---------- BUILDER ---------- */
+
+  .builder {
+    width: 100%;
+
+    padding: 20px 16px;
+
+    border-radius: 12px;
+  }
+
+
+  /* ---------- HEADINGS ---------- */
+
+  h1 {
+    font-size: 23px;
+
+    margin-bottom: 18px;
+  }
+
+  h2 {
+    font-size: 18px;
+
+    padding-top: 18px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+
+  /* ---------- OPTION GROUP ---------- */
+
+  .option-group {
+    margin-bottom: 20px;
+  }
+
+  .option-group h3 {
+    font-size: 14px;
+
+    margin-bottom: 9px;
+  }
+
+
+  /* ---------- OPTIONS ---------- */
+
+  .option {
+    padding: 9px 12px;
+
+    margin-right: 5px;
+    margin-bottom: 6px;
+
+    font-size: 13px;
+  }
+
+
+  /* ---------- ACTION BUTTONS ---------- */
+
+  #addBtn,
+  #resetBtn {
+    width: 100%;
+
+    margin-right: 0;
+    margin-top: 6px;
+    margin-bottom: 8px;
+
+    padding: 11px 16px;
+
+    font-size: 14px;
+  }
+
+
+  /* ---------- ORDER LIST ---------- */
+
+  #orderList li {
+    padding: 10px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+
+  /* ---------- PLACE ORDER ---------- */
 
   #placeOrderBtn {
     width: 100%;
-    padding: 14px;
+
+    padding: 13px;
+
+    font-size: 15px;
   }
 
-  #orderList li {
-    font-size: 13px;
-    padding: 10px;
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+  body {
+    padding-left: 8px;
+    padding-right: 8px;
   }
-}
 
-/* back button */
-.back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #d8c8b8;
-  text-decoration: none;
-  font-size: 14px;
-  margin-bottom: 16px;
-  position: relative;
-}
+  .navbar {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
-.back-btn:hover {
-  color: #e6b464;
+  .navbar .nav-links {
+    gap: 12px;
+  }
+
+  .navbar .nav-links li a {
+    font-size: 12px;
+  }
+
+  .builder {
+    padding: 18px 13px;
+  }
+
+  h1 {
+    font-size: 21px;
+  }
+
+  .option {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
 }
